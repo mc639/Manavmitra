@@ -35,15 +35,18 @@ uwsgi --http :8080 --home /home/wizzy/manavmitra_website/manavmitraenv --chdir /
 Rest from here : https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-14-04
 
 
-server {
+server
+{
+    
     listen 80;
     server_name ;
     location = /favicon.ico { access_log off; log_not_found off; }
-    location /static/ {
+    location /static/{
         root /home/wizzy/manavmitra_website/manavmitra;
     }
     location / {
         include         uwsgi_params;
         uwsgi_pass      unix:/run/uwsgi/manavmitra_website.sock;
     }
+    
 }
