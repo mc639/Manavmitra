@@ -1,0 +1,432 @@
+{% extends 'hindi/html/base.html' %}
+{% load staticfiles %}
+{% block main %}
+<section id="main-section" xmlns="http://www.w3.org/1999/html">
+		<!-- ========== BEGIN PARALLAX ========== -->
+		<!-- ========== END PARALLAX ========== -->
+		<!--========== BEGIN .MODULE ==========-->
+		<section class="module">
+		  <!--========== BEGIN .CONTAINER ==========-->
+		  <div class="container">
+			<!--========== BEGIN .BREAKING-NEWS ==========-->
+			<!-- Begin .outer -->
+			<div class="outer">
+			  <div class="breaking-ribbon">
+				<h4>Breaking News</h4>
+			  </div>
+			    <!-- Begin .newsticker -->
+			    <div class="newsticker">
+				<ul>
+                    {% for news in breaking_news reversed%}
+				  <li>
+					<h4><span class="category">{{ news.category }} : </span><a href="/hindi/post/{{ news.slug }}">{{ news.caption }}</a></h4>
+				  </li>
+                    {% endfor %}
+				</ul>
+
+				<div class="navi">
+				  <button class="up"><i class="fa fa-caret-left"></i></button>
+				  <button class="down"><i class="fa fa-caret-right"></i></button>
+				</div>
+			  <!-- End .newsticker -->
+			</div>
+			</div>
+			<!-- End .outer -->
+			<!--========== END .BREAKING-NEWS ==========-->
+			<!--========== BEGIN #NEWS-SLIDER ==========-->
+			<div align="center" id="news-slider" class="owl-carousel">
+				{% for news in breaking_news reversed %}
+			    <div class="news-slide">
+				<div class="news-slider-layer first"> <a href="/hindi/post/{{ news.slug }}" target="_blank">
+				  <div class="content"> <span style="color:black" class="carousel-caption d-none d-md-block"><span class="category-tag bg-1">{{ news.category }}</span><p>{{ news.caption }}</p></span></div>
+				  <img style="object-fit:cover;" src="{{ news.image_upload.url }}" alt=""> </a> </div>
+            </div>
+				{% endfor %}
+			</div>
+			<!--========== END .NEWS-SLIDER ==========-->
+		  </div>
+		</section>
+        {% if gujarat %}
+		<section class="module highlight">
+		  <div class="container">
+			<div class="module-title">
+			  <h3 class="title"><a href="/hindi/category/{{ gujarat.0.category}}/"><span class="bg-1">{{ gujarat.0.category }}</span></a></h3>
+			  <h3 class="subtitle">Watch the latest news</h3>
+			</div>
+			<!--========== BEGIN .ROW ==========-->
+			<div class="row no-gutter">
+			  <!--========== BEGIN .COL-MD-6 ==========-->
+			  <div class="col-sm-6 col-md-6">
+				<!--========== BEGIN .NEWS ==========-->
+				<div class="news">
+				  <!-- Begin .item -->
+					{% if gujarat.0 %}
+				  <div class="item">
+					<div class="item-image-1"><a class="img-link" href="/hindi/post/{{ gujarat.0.slug }}/"><img class="img-responsive img-full" src="{{ gujarat.0.image_upload.url }}" alt=""></a></div>
+					<div class="item-content">
+					  <div class="title-left title-style04 underline04">
+						<h3><a href="/hindi/post/{{ gujarat.0.slug }}/"><strong>{{ gujarat.0.caption | truncatewords:5 | safe }}</strong></a></h3>
+					  </div>
+					  <p><a href="/hindi/post/{{ gujarat.0.slug }}" target="_blank" class="external-link">{{ gujarat.0.article | truncatewords:20 | safe  }}</a> </p>
+					</div>
+				  </div>
+					{% endif %}
+				  <!-- End .item -->
+				  <!-- Begin .item -->
+					{% if gujarat.1 %}
+				  <div class="item">
+					<div class="item-image-1"><a class="img-link" href="/hindi/post/{{ gujarat.1.slug }}/"><img class="img-responsive img-full" src="{{ gujarat.1.image_upload.url }}" alt=""></a></div>
+					<div class="item-content">
+					  <div class="title-left title-style04 underline04">
+						<h3><a href="/hindi/post/{{ gujarat.1.slug }}/"><strong>{{ gujarat.1.caption | truncatewords:5 | safe }}</strong></a></h3>
+					  </div>
+					  <p><a href="/hindi/post/{{ gujarat.1.slug }}" target="_blank" class="external-link">{{ gujarat.1.article | truncatewords:20 | safe }}</a> </p>
+					</div>
+				  </div>
+					{% endif %}
+				  <!-- End .item -->
+				</div>
+				<!--========== END .NEWS ==========-->
+			  </div>
+			  <!--========== END .COL-MD-6 ==========-->
+			  <!--========== BEGIN .COL-MD-6 ==========-->
+			  <div class="col-sm-6 col-md-6">
+				<!--========== BEGIN .NEWS==========-->
+				<div class="news">
+				  <!-- Begin .item-->
+					{% if gujarat.2 %}
+				  <div class="item">
+					<div class="item-image-1"><a class="img-link" href="/hindi/post/{{ gujarat.2.slug }}/"><img class="img-responsive img-full" src="{{ gujarat.2.image_upload.url }}" alt=""></a></div>
+					<div class="item-content">
+					  <div class="title-left title-style04 underline04">
+						<h3><a href="/hindi/post/{{ gujarat.2.slug }}/"><strong>{{ gujarat.2.caption | truncatewords:5 | safe }}</strong></a></h3>
+					  </div>
+					  <p><a href="/hindi/post/{{ gujarat.2.slug }}" target="_blank" class="external-link">{{ gujarat.2.article | truncatewords:20 | safe }}</a> </p>
+					</div>
+				  </div>
+					{% endif %}
+				  <!-- End .item-->
+				  <!-- Begin .item -->
+					{% if gujarat.3 %}
+				  <div class="item">
+
+					<div class="item-image-1"><a class="img-link" href="/hindi/post/{{ gujarat.3.slug }}/"><img class="img-responsive img-full" src="{{ gujarat.3.image_upload.url }}" alt=""></a></div>
+					<div class="item-content">
+					  <div class="title-left title-style04 underline04">
+						<h3><a href="/hindi/post/{{ gujarat.3.slug }}/"><strong>{{ gujarat.3.caption | truncatewords:5 | safe }}</strong></a></h3>
+					  </div>
+					  <p><a href="/hindi/post/{{ gujarat.3.slug }}" target="_blank" class="external-link">{{ gujarat.3.article | truncatewords:20 | safe}}</a> </p>
+					</div>
+				  </div>
+					{% endif %}
+				  <!-- End .item -->
+				</div>
+				<!--========== END .NEWS ==========-->
+			  </div>
+			  <!--========== END .COL-MD-6 ==========-->
+			</div>
+		  </div>
+		</section>
+        {% endif %}
+		{% if national %}
+		<section class="module">
+		  <div class="container">
+			<div class="row no-gutter">
+			  <!--========== BEGIN .COL-MD-8 ==========-->
+			  <div class="col-md-8">
+				<!--========== BEGIN .NEWS ==========-->
+				<div class="news">
+				  <div class="module-title">
+					<h3 class="title"><a href="/hindi/category/{{ national.0.category }}/"><span class="bg-11">{{ national.0.category }}</span></a></h3>
+					<h3 class="subtitle">Latest News in details</h3>
+				  </div>
+				  <!-- Begin .item-->
+					{% if national.0 %}
+				  <div class="item">
+					<div class="item-image-1"><a class="img-link" href="/hindi/post/{{ national.0.slug }}/"><img class="img-responsive img-full" src="{{ national.0.image_upload.url }}" alt=""></a></div>
+					<div class="item-content">
+					  <div class="title-left title-style04 underline04">
+						<h3><a href="/hindi/post/{{ national.0.slug }}/"><strong>{{ national.0.caption | truncatewords:5 | safe }}</strong></a></h3>
+					  </div>
+					  <p><a href="/hindi/post/{{ national.0.slug }}" target="_blank" class="external-link">{{ national.0.article | truncatewords:20 | safe}}</a> </p>
+					</div>
+				  </div>
+					{% endif %}
+				  <!-- End .item-->
+				  <!-- Begin .item-->
+				  {% if national.1 %}
+				  <div class="item">
+					<div class="item-image-1"><a class="img-link" href="/hindi/post/{{ national.1.slug }}/"><img class="img-responsive img-full" src="{{ national.1.image_upload.url }}" alt=""></a></div>
+					<div class="item-content">
+					  <div class="title-left title-style04 underline04">
+						<h3><a href="/hindi/post/{{ national.1.slug }}/"><strong>{{ national.1.caption | truncatewords:5 | safe  }}</strong></a></h3>
+					  </div>
+					  <p><a href="/hindi/post/{{ national.1.slug }}" target="_blank" class="external-link">{{ national.1.article | truncatewords:20 | safe }}</a> </p>
+					</div>
+				  </div>
+					{% endif %}
+				  <!-- End .item-->
+				  <!-- Begin .item-->
+				  {% if national.2 %}
+				  <div class="item">
+					<div class="item-image-1"><a class="img-link" href="/hindi/post/{{ national.2.slug }}/"><img class="img-responsive img-full" src="{{ national.2.image_upload.url }}" alt=""></a></div>
+					<div class="item-content">
+					  <div class="title-left title-style04 underline04">
+						<h3><a href="/hindi/post/{{ national.2.slug }}/"><strong>{{ national.2.caption | truncatewords:5 | safe  }}</strong></a></h3>
+					  </div>
+					  <p><a href="/hindi/post/{{ national.2.slug }}" target="_blank" class="external-link">{{ national.2.article | truncatewords:20 | safe }}</a></p>
+					</div>
+				  </div>
+					{% endif %}
+				  <!-- End .item-->
+				  <!-- Begin .item-->
+				  {% if national.3 %}
+				  <div class="item">
+					<div class="item-image-1"><a class="img-link" href="/hindi/post/{{ national.3.slug }}/"><img class="img-responsive img-full" src="{{ national.3.image_upload.url }}" alt=""></a></div>
+					<div class="item-content">
+					  <div class="title-left title-style04 underline04">
+						<h3><a href="/hindi/post/{{ national.3.slug }}/"><strong>{{ national.3.caption | truncatewords:5 | safe  }}</strong></a></h3>
+					  </div>
+					  <p><a href="/hindi/post/{{ national.3.slug }}" target="_blank" class="external-link">{{ national.3.article | truncatewords:20 | safe}}</a></p>
+					</div>
+				  </div>
+					{% endif %}
+				  <!-- End .item-->
+				</div>
+				<!--========== End .NEWS ==========-->
+			  </div>
+			  <!--========== End .COL-MD-8 ==========-->
+			  <!--========== BEGIN .COL-MD-4 ==========-->
+				<div class="col-md-4">
+            <!--========== BEGIN #SIDEBAR-NEWSFEED ==========-->
+            <!-- Begin .block-title-1 -->
+                  {% if breaking_news %}
+				<div class="block-title-1">
+				  <h3><a href="/hindi/"><strong>24h News</strong> Feed</a></h3>
+				</div>
+				<!-- End .block-title-1 -->
+				<!--========== BEGIN .SIDEBAR-NEWSFEED ==========-->
+				<div class="sidebar-newsfeed">
+				  <!-- Begin .newsfeed -->
+				  <div class="newsfeed-3">
+					<ul>
+						{% for news in breaking_news %}
+					  <li>
+						<div class="item">
+						  <div class="item-image"><a class="img-link" href="/hindi/post/{{ news.slug }}"><img class="img-responsive img-full" src="{{ news.image_upload.url }}" alt=""></a></div>
+						  <div class="item-content">
+							<h4 class="ellipsis"><a href="/hindi/post/{{ news.slug }}">{{ news.caption }}</a></h4>
+						  </div>
+						</div>
+					  </li>
+						{% endfor %}
+					</ul>
+				  </div>
+				  <!-- End .newsfeed -->
+				</div>
+                  {% endif %}
+          </div>
+			  <!--========= END .COL-MD-4 ==========-->
+			</div>
+		  </div>
+		</section>
+		{% endif %}
+		<section class="module dark">
+		  <div class="container">
+			<div class="show-info">
+			  <h4 class="schedule-logo bg-1"><a href="/hindi/" target="_blank">Manavmitra</a></h4>
+			  <div class="show-title">
+				<h2>Manavmitra</h2>
+				<h3>Satya .
+                    Nidar .
+                    Nishpaksh .</h3>
+                  <div class="figure"><img src="{% static 'manavmitra/img/mm.png' %}" alt=""></div>
+			  </div>
+			  <h4><a class="show-info-button bg-1" href="#">The Best Digital Media ever.</a></h4>
+                <div class="figure"><img src="{% static 'manavmitra/img/mm.png' %}" alt=""></div>
+			</div>
+			<div class="schedule-squares"><span class="square2"></span><span class="square3"></span><span class="square4"></span> <span class="square5"></span><span class="square6"></span><span class="square7"></span><span class="square8"></span><span class="square9"></span><span class="square10"></span><span class="square11"></span></div>
+		  </div>
+		</section>
+		{% if bollywood %}
+		<section class="module">
+		  <!--========== BEGIN .CONTAINER ==========-->
+		  <div class="container">
+			<!--========== BEGIN .ROW ==========-->
+			<div class="row no-gutter">
+			  <!-- Begin .full-block-three-columns -->
+			  <div class="full-block-three-columns">
+				<!-- Begin .container-full-->
+				<div class="container-full bottom-text full-photo">
+				  <div class="entry-media">
+					<a href="/hindi/post/{{ bollywood.slug }}"><div class="image" style="display: block; background-image: url({{ bollywood.image_upload.url }});"></div></a>
+				  </div>
+				  <div class="content">
+					<h2><a href="/hindi/post/{{ bollywood.slug }}">{{ bollywood.caption }}</a></h2>
+					<h4>{{ bollywood.article| truncatewords:20 | safe }}</h4>
+				  </div>
+				</div>
+				<!-- End .container-full-->
+			  </div>
+			  <!-- End .full-block-three-columns -->
+			  <!-- Begin .full-block-three-columns -->
+			  <div class="full-block-three-columns">
+				<!-- Begin .container-half -->
+				  <div class="video-container">
+					  <!--<iframe id="ytplayer" width="100%" height="337" src="{{ trailer.trailer_url }}" frameborder="0"></iframe>-->
+                  <iframe src="{{ trailer.0.trailer_url }}" class="video" title="Advertisement"></iframe>
+				  </div><br>
+				  <div class="video-container">
+					  <!--<iframe id="ytplayer" width="100%" height="337" src="{{ trailer.trailer_url }}" frameborder="0"></iframe>-->
+                  <iframe src="{{ trailer.1.trailer_url }}" class="video" title="Advertisement"></iframe>
+				  </div><br>
+				  <div class="entry-media">
+					<a href="https://www.accuweather.com/gu/in/ahmedabad/202438/weather-forecast/202438" class="aw-widget-legal">
+<!--
+By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+-->
+</a><div  id="awcc1490188788602" class="aw-widget-current"  data-locationkey="202438" data-unit="c" data-language="gu" data-useip="false" data-uid="awcc1490188788602"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+					</div>
+			  </div>
+			  <!-- End .full-block-three-columns -->
+			  <!-- Begin .full-block-three-columns -->
+			  <div class="full-block-three-columns">
+				<!--<div class="sidebar-add-place"> <a href="#" target="_blank"><img class="img-responsive" src="{% static 'manavmitra/img/ad_300x600.jpg' %}" alt=""></a> </div>-->
+			  </div>
+			  <!-- End .full-block-three-columns -->
+			</div>
+			<!--========== END .ROW ==========-->
+		  </div>
+		  <!--========== END .CONTAINER ==========-->
+		  </section>
+		{% endif %}
+		<!-- Begin .add-place -->
+		<!--<div class="add-place"> <a href="#" target="_blank"><img src="{% static 'manavmitra/img/ad_820x100.jpg' %}" alt=""></a> </div>-->
+		<!-- End .add-place -->
+		<section class="module">
+			<div class="container">
+			  <div class="row no-gutter">
+				<!--========== BEGIN .COL-MD-8 ==========-->
+				<div class="col-md-8">
+				  <div class="news">
+					<div class="module-title">
+					  <h3 class="title"><span class="bg-2">{{ international.0.category }}</span></h3>
+					  <h3 class="subtitle">Watch the latest news</h3>
+					</div>
+					<!-- Begin .item -->
+					  {% if international.0 %}
+					<div class="item">
+					  <div class="item-image-1"><a class="img-link" href="/hindi/post/{{ international.0.slug }}/"><img class="img-responsive img-full" src="{{ international.0.image_upload.url }}" alt=""></a></div>
+					  <div class="item-content">
+						<div class="title-left title-style04 underline04">
+						  <h3><a href="/hindi/post/{{ international.0.slug }}/">{{ international.0.caption | truncatewords:5 | safe  }}</a></h3>
+						</div>
+						<br>
+						<p><a href="/hindi/post/{{ international.0.slug }}/" target="_blank" class="external-link">{{ international.0.article | truncatewords:20 | safe }}</a></p>
+					  </div>
+					</div>
+					  {% endif %}
+					<!-- End .item -->
+					<div class="news-block">
+						{% if international.1 %}
+					  <div class="item-block">
+						<div class="item-image"><a class="img-link" href="/hindi/post/{{ international.1.slug }}/"><img class="img-responsive img-full" src="{{ international.1.image_upload.url }}" alt=""></a></div><div class="item-content">
+						  <p><a href="/hindi/post/{{ international.1.slug }}">{{ international.1.caption | truncatewords:5 | safe }}</a></p>
+						</div>
+					  </div>
+						{% endif %}
+						{% if international.2 %}
+					  <div class="item-block">
+						<div class="item-image"><a class="img-link" href="/hindi/post/{{ international.2.slug }}/"><img class="img-responsive img-full" src="{{ international.2.image_upload.url }}" alt=""></a></div><div class="item-content">
+						  <p><a href="/hindi/post/{{ international.2.slug }}">{{ international.2.caption | truncatewords:5 | safe }}</a></p>
+						</div>
+					  </div>
+						{% endif %}
+						{% if international.3 %}
+					  <div class="item-block">
+						<div class="item-image"><a class="img-link" href="/hindi/post/{{ international.3.slug }}/"><img class="img-responsive img-full" src="{{ international.3.image_upload.url }}" alt=""></a></div><div class="item-content">
+						  <p><a href="/hindi/post/{{ international.3.slug }}">{{ international.3.caption | truncatewords:5 | safe }}</a></p>
+						</div>
+					  </div>
+						{% endif %}
+					</div>
+					  {% if sports %}
+					<div class="module-title">
+					  <h3 class="title"><span class="bg-9">{{ sports.0.category }}</span></h3>
+					  <h3 class="subtitle">Watch the latest news</h3>
+					</div>
+					<!-- Begin .item -->
+					  {% if sports.0 %}
+					<div class="item">
+					  <div class="item-image-1"><a class="img-link" href="/hindi/post/{{ sports.0.slug }}/"><img class="img-responsive img-full" src="{{ sports.0.image_upload.url }}" alt=""></a></div>
+					  <div class="item-content">
+						<div class="title-left title-style04 underline04">
+						  <h3><a href="/hindi/post/{{ sports.0.slug }}/">{{ sports.0.caption | truncatewords:5 | safe }}</a></h3>
+						</div>
+						<br>
+						<p><a href="/hindi/post/{{ sports.0.slug }}/" target="_blank" class="external-link">{{ sports.0.article | truncatewords:20 | safe }}</a></p>
+					  </div>
+					</div>
+					  {% endif %}
+					<!-- End .item -->
+					<div class="news-block">
+						{% if sports.1 %}
+					  <div class="item-block">
+						<div class="item-image"><a class="img-link" href="/hindi/post/{{ sports.1.slug }}/"><img class="img-responsive img-full" src="{{ sports.1.image_upload.url }}" alt=""></a></div><div class="item-content">
+						  <p><a href="/hindi/post/{{ sports.1.slug }}">{{ sports.1.caption | truncatewords:5 | safe }}</a></p>
+						</div>
+					  </div>
+						{% endif %}
+						{% if sports.2 %}
+					  <div class="item-block">
+						<div class="item-image"><a class="img-link" href="/hindi/post/{{ sports.2.slug }}/"><img class="img-responsive img-full" src="{{ sports.2.image_upload.url }}" alt=""></a></div><div class="item-content">
+						  <p><a href="/hindi/post/{{ sports.2.slug }}">{{ sports.2.caption | truncatewords:5 | safe }}</a></p>
+						</div>
+					  </div>
+						{% endif %}
+						{% if sports.3 %}
+					  <div class="item-block">
+						<div class="item-image"><a class="img-link" href="/hindi/post/{{ sports.3.slug }}/"><img class="img-responsive img-full" src="{{ sports.3.image_upload.url }}" alt=""></a></div><div class="item-content">
+						  <p><a href="/hindi/post/{{ sports.3.slug }}">{{ sports.3.caption | truncatewords:5 | safe }}</a></p>
+						</div>
+					  </div>
+						{% endif %}
+					</div>
+					  {% endif %}
+				  </div>
+				  <!--========== BEGIN NEWS==========-->
+				  <!--========== BEGIN .PAGINATION ==========-->
+				  <!--========== END .PAGINATION ==========-->
+				</div>
+				<!--========== END .C0L-MD-8 ==========-->
+				<!--========== BEGIN .C0L-MD-4 ==========-->
+				<div class="col-md-4">
+				  {% if trailerSports.0 %}
+				  <div class="video-container">
+                  	<iframe src="{{ trailerSports.0.trailer_url }}" class="video" title="Advertisement"></iframe>
+				  </div><br>
+					{% endif %}
+					{% if trailerSports.1 %}
+				  <div class="video-container">
+                  	<iframe src="{{ trailerSports.1.trailer_url }}" class="video" title="Advertisement"></iframe>
+				  </div><br>
+					{% endif %}
+				</div>
+			  </div>
+			</div>
+		  </section>
+		<section class="module highlight">
+			<!--========== BEGIN .CONTAINER ==========-->
+			<div class="container">
+			  <!--========== BEGIN SMALL-GALLERY ==========-->
+			  <!-- Begin .carousel-title -->
+			  <!-- End .gallery-slider owl-carousel -->
+			  <!--========== END SMALL-GALLERY ==========-->
+			  <!-- Begin .bottom-add-place-->
+			  <!--<div class="bottom-add-place"> <a href="#" target="_blank"><img src="{% static 'manavmitra/img/ad_1248x100.jpg' %}" alt=""></a> </div>-->
+			  <!-- End .bottom-add-place -->
+			</div>
+			<!--========== END .CONTAINER ==========-->
+		  </section>
+		</section>
+{% endblock %}

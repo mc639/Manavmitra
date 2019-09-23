@@ -1,0 +1,113 @@
+{% extends 'hindi/html/base.html' %}
+{% load staticfiles %}
+{% block main %}
+<section id="main-section">
+		<!-- ========== BEGIN PARALLAX ========== -->
+		<!-- ========== END PARALLAX ========== -->
+		<!--========== BEGIN .MODULE ==========-->
+		<!--========== END .MODULE ==========-->
+		<!--========== BEGIN .MODULE ==========-->
+		<!--========== END .MODULE ==========-->
+		<!--========== BEGIN .MODULE ==========-->
+		<section class="module">
+		  <div class="container">
+			<div class="row no-gutter">
+			  <!--========== BEGIN .COL-MD-8 ==========-->
+			  <div class="col-md-8">
+				<!--========== BEGIN .NEWS ==========-->
+                  {% if posts %}
+				<div class="news">
+				  <div class="module-title">
+					<h3 class="title"><span class="bg-11">{{ category_name.name }}</span></h3>
+				  </div>
+				  <!-- Begin .item-->
+                    {% for post in posts reversed %}
+                        <div class="item">
+					<div class="item-image-2"><a class="img-link" href="/hindi/post/{{ post.slug }}"><img class="img-responsive img-full" src="{{ post.image_upload.url }}" alt=""></a></div>
+					<div class="item-content">
+					  <div class="title-left title-style04 underline04">
+						<h3><a href="/hindi/post/{{ post.slug }}">{{ post.caption }}</a></h3>
+					  </div>
+					  <p><a href="/hindi/post/{{ post.slug }}">{{ post.article | truncatewords:25 | safe }}</a></p>
+                        <br>
+					</div>
+				  </div>
+                     {% endfor %}
+				  <!-- End .item-->
+				</div>
+                  {% endif %}
+				<!--========== End .NEWS ==========-->
+			  </div>
+			  <!--========== End .COL-MD-8 ==========-->
+			  <!--========== BEGIN .COL-MD-4 ==========-->
+				<div class="col-md-4">
+            <!--========== BEGIN #SIDEBAR-NEWSFEED ==========-->
+            <!-- Begin .block-title-1 -->
+                  {% if breaking_news %}
+				<div class="block-title-1">
+				  <h3><a href="/hindi/"><strong>24h News</strong> Feed</a></h3>
+				</div>
+				<!-- End .block-title-1 -->
+				<!--========== BEGIN .SIDEBAR-NEWSFEED ==========-->
+				<div class="sidebar-newsfeed">
+				  <!-- Begin .newsfeed -->
+				  <div class="newsfeed-3">
+					<ul>
+						{% for news in breaking_news reversed %}
+					  <li>
+						<div class="item">
+						  <div class="item-image"><a class="img-link" href="/hindi/post/{{ news.slug }}"><img class="img-responsive img-full" src="{{ news.image_upload.url }}" alt=""></a></div>
+						  <div class="item-content">
+							<h4 class="ellipsis"><a href="/hindi/post/{{ news.slug }}">{{ news.caption }}</a></h4>
+						  </div>
+						</div>
+					  </li>
+						{% endfor %}
+					</ul>
+				  </div>
+				  <!-- End .newsfeed -->
+				</div>
+                  {% endif %}
+				<!--========== END .SIDEBAR-NEWSFEED ==========-->
+            <!--========== END .SIDEBAR-POST ==========-->
+            <!-- Begin .sidebar-add-place -->
+            <!--<div class="sidebar-add-place"> <a href="#" target="_blank"><img src="{% static 'manavmitra/img/ad_400x270.jpg' %}" alt=""></a></div>-->
+            <!-- End .sidebar-add-place -->
+            <!--========== BEGIN .SIDEBAR-CATEGORIES ==========-->
+            <!-- Begin .block-title-1 -->
+
+            <!-- End .block-title-1 -->
+
+            <!--========== END .SIDEBAR-CATEGORIES ==========-->
+
+            <!--========== BEGIN .SIDEBAR-REVIEWS==========-->
+            <!-- Begin .block-title-3 -->
+
+            <!-- End .block-title-3 -->
+
+            <!--========== END .SIDEBAR-REVIEWS ==========-->
+
+            <!--========== BEGIN .CALENDAR==========-->
+
+            <!--========== END .CALENDAR ==========-->
+            <!--========== BEGIN #SIDEBAR-NEWSLETTER ==========-->
+
+            <!--========== END #SIDEBAR-NEWSLETTER ==========-->
+            <!--========== BEGIN #SIDEBAR-SOCIAL-BUTTONS ==========-->
+
+            <!--========== END #SIDEBAR-SOCIAL-BUTTONS ==========-->
+          </div>
+			  <!--========== END .COL-MD-4 ==========-->
+			</div>
+		  </div>
+		</section>
+		<!--========== END .MODULE ==========-->
+		<!--========== BEGIN .MODULE ==========-->
+		<!--========== END .MODULE ==========-->
+		<!--========== BEGIN .MODULE ==========-->
+		<!--========== END .MODULE ==========-->
+		<!--========== BEGIN .MODULE ==========-->
+		  <!--========== BEGIN .CONTAINER ==========-->
+		  <!--========== END .CONTAINER ==========-->
+		  </section>
+{% endblock %}

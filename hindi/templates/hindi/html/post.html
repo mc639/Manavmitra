@@ -1,0 +1,118 @@
+{% extends 'hindi/html/base.html' %}
+{% load staticfiles %}
+{% load simple_open_graph %}
+
+{% block extra_head %}
+    {% opengraph_meta "url=request.get_full_path, title=x.caption, type='website', image=x.image_upload.url , description=x.article" %}
+{% endblock %}
+
+{% block main %}
+
+<div id="main-section" xmlns="http://www.w3.org/1999/html">
+    <!--========== BEGIN .CONTAINER ==========-->
+    <div class="container"> </div>
+    <!--========== END .CONTAINER ==========-->
+    <!--========== BEGIN .MODULE ==========-->
+    <section class="module">
+      <div class="container">
+        <!--========== BEGIN .BREAKING-NEWS ==========-->
+        <!-- Begin .outer -->
+        <div class="outer">
+			  <div class="breaking-ribbon">
+				<h4>Breaking News</h4>
+			  </div>
+			    <!-- Begin .newsticker -->
+			    <div class="newsticker">
+				<ul>
+                    {% for news in breaking_news reversed %}
+				  <li>
+					<h4><span class="category">{{ news.category }} : </span><a href="/hindi/post/{{news.slug}}/">{{ news.caption }}</a></h4>
+				  </li>
+                    {% endfor %}
+				</ul>
+
+				<div class="navi">
+				  <button class="up"><i class="fa fa-caret-left"></i></button>
+				  <button class="down"><i class="fa fa-caret-right"></i></button>
+				</div>
+			  <!-- End .newsticker -->
+			</div>
+			</div>
+        <!-- End .outer -->
+        <!--========== END .BREAKING-NEWS ==========-->
+        <!--========== BEGIN .ROW ==========-->
+        <div class="row no-gutter">
+          <!--========== BEGIN .COL-MD-8 ==========-->
+          <div class="col-md-8" >
+            <!--========== BEGIN .POST ==========-->
+            <div class="post post-full clearfix">
+			<br>
+				<b style="color:black"><a style="color:black" href="/hindi/">Home</a> > <a style="color:black" href="/hindi/category/{{ x.category }}">{{ x.category }}</a> > <a style="color:black" href="/hindi/post/{{ x.slug }}">{{ x.caption }}</a><b>
+			<br>
+			<br>
+			<br>
+              <div class="entry-media"><center><a href="#"><img src="{{ x.image_upload.url }}" alt="Foto" class="img-responsive"></a></center></div>
+            <br>
+		<h4 style="font-weight:bold;font-size:24px; " class="entry-title">{{ x.caption }}</h4>
+		<h5 style="color:red;" class="entry-title">{{ x.time }}</h5>
+                <div class="entry-title">
+		<div class="fb-share-button" style="top: -6px;" data-layout="button" data-size="large" data-mobile-iframe="false"></div>&nbsp;&nbsp;
+		<a class="twitter-share-button" style="" data-size="large">Tweet</a>&nbsp;&nbsp;
+		<a href="whatsapp://send?text={{ request.build_absolute_uri  }}" ><img src="http://lpmpbanten.net/ptp/wp-content/uploads/2017/04/whatsapp-share-button-e1491786594394.png" style="vertical-align:top;height:39px;margin-top:-6px;" alt="Whatsapp"></img></a>&nbsp;&nbsp;
+                </div>
+				<br>
+                <div class="entry-main">
+                <div class="entry-content">
+                  <b>{{ x.article | safe }}</b>
+                    <br>
+					{% if x.video %}
+                    <div class="video-container">
+						<iframe src="{{ x.video }}" class="video" title="Video"></iframe>
+					</div>
+					{% endif %}
+					<br>
+					{% if x.articlemain %}
+						<b>{{ x.articlemain | safe }}</b>
+					{% endif%}
+					<br>
+					{% if x.embed %}
+						<center>{{ x.embed | safe }}</center>
+					{% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <!--========== BEGIN #SIDEBAR-NEWSFEED ==========-->
+            <!-- Begin .block-title-1 -->
+                  {% if breaking_news %}
+				<div class="block-title-1">
+				  <h3><a href="/hindi/"><strong>24h News</strong> Feed</a></h3>
+				</div>
+				<!-- End .block-title-1 -->
+				<!--========== BEGIN .SIDEBAR-NEWSFEED ==========-->
+				<div class="sidebar-newsfeed">
+				  <!-- Begin .newsfeed -->
+				  <div class="newsfeed-3">
+					<ul>
+						{% for news in breaking_news reversed %}
+					  <li>
+						<div class="item">
+						  <div class="item-image"><a class="img-link" href="/hindi/post/{{ news.slug }}"><img class="img-responsive img-full" src="{{ news.image_upload.url }}" alt=""></a></div>
+						  <div class="item-content">
+							<h4 class="ellipsis"><a href="/hindi/post/{{ news.slug }}">{{ news.caption }}</a></h4>
+						  </div>
+						</div>
+					  </li>
+						{% endfor %}
+					</ul>
+				  </div>
+				  <!-- End .newsfeed -->
+				</div>
+                  {% endif %}
+          </div>
+        </div>
+    </div>
+    </section>
+  </div>
+{% endblock %}

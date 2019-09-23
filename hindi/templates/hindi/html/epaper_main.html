@@ -1,0 +1,21 @@
+{% extends 'hindi/html/base.html' %}
+{% load staticfiles %}
+{% block main %}
+<div id="main-section">
+    <!--========== BEGIN .CONTAINER ==========-->
+    <div class="container">
+        <br><br><br>
+        <h1><center><b>E-Paper</b></center></h1>
+        <h3><center><b>Select a date to get the E-paper.</b></center></h3>
+        {% if pdf %}
+{% for paper in pdf %}
+        <br>
+        <h4><center><li><a href="/hindi/epaper/{{ paper.e_paper_name }}">{{ paper.date }}</a></li></center></h4>
+        <br>
+{% endfor %}
+{% endif %}
+    </div>
+  </div>
+
+{% endblock %}
+

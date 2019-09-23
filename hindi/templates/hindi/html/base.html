@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+	<html lang="en">
+    {% load staticfiles %}
+	<head xmlns:fb="http://ogp.me/ns/fb#" lang="en">
+	{% block extra_head %}
+	{% endblock %}
+	<meta charset="UTF-8">
+	<meta name="google-site-verification" content="WC90q49DefNIncCpYZdE02SP9frsrxgK6GC-nkK0W3I" />
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{ x.news_caption }}">
+	<meta name="twitter:description" content="{{ x.news_article }}">
+	<meta name="twitter:image" content="{{ x.news_image.url }}">
+	<meta name="twitter:image:alt" content="hello">
+	<meta name="title" content="Manavmitra">
+	<meta property="fb:app_id" content="1402984799763218" />
+	<meta property="og:image" content="{{ x.news_image.url }}" itemprop="image" />
+	<meta name="description" content="Manavmitra Gujarati News">
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Site Title  -->
+	<title>Manavmitra</title>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{% static 'manavmitra/img/favicon3.png' %}" type="image/x-icon" />
+
+	<!-- Web Fonts  -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed%7CRoboto+Slab:300,400,700%7CRoboto:300,400,500,700" rel="stylesheet">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'manavmitra/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'manavmitra/css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'manavmitra/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'manavmitra/css/colors.css' %}">
+	<link rel="stylesheet" href="{% static 'manavmitra/css/responsive.css' %}">
+	<link rel="stylesheet" href="{% static 'manavmitra/css/jquery-ui.min.css' %}">
+	<link rel="stylesheet" href="{% static 'manavmitra/css/weather-icons.min.css' %}">
+
+	<!--[if lt IE 9]>
+		  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		  <![endif]-->
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+  		(adsbygoogle = window.adsbygoogle || []).push({
+    		google_ad_client: "ca-pub-8140401980074981",
+    		enable_page_level_ads: true
+  		});
+	</script>
+	</head>
+	<body>
+
+        
+       <!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-sWk6WkswwBjZn"
+});
+</script>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1402984799763218',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+function onButtonClick() {
+  // Add this to a button's onclick handler
+  FB.AppEvents.logEvent("sentFriendRequest");
+}
+
+
+
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96521942-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105222326-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+<script type="text/javascript">if(typeof wabtn4fg==="undefined"){wabtn4fg=1;h=document.head||document.getElementsByTagName("head")[0],s=document.createElement("script");s.type="text/javascript";s.src="www.manavmitra.com/whatsapp-button.js";h.appendChild(s);}</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-sWk6WkswwBjZn.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+ 
+	<div id="pageloader">
+	  <div class="loader-item"> <img src="{% static 'manavmitra/img/load.gif' %}" alt='loader' /> </div>
+	</div>
+	<!--========== BEGIN #WRAPPER ==========-->
+	<div id="wrapper" data-color="red">
+	  <!--========== BEGIN #HEADER ==========-->
+	  <header id="header">
+		<!-- Begin .top-menu -->
+		<div class="top-menu ">
+		  <!-- Begin .container -->
+		  <div class="container">
+			<!-- Begin .left-top-menu -->
+			<ul class="left-top-menu">
+			  <li><a href="https://www.facebook.com/manavmitranews/" class="facebook"><i class="fa fa-facebook"></i></a></li>
+			  <li><a href="https://twitter.com/manavmitranews" class="twitter"><i class="fa fa-twitter"></i></a></li>
+			  <li><a href="https://www.youtube.com/channel/UCReiS8D2lTHAuQCjXT4znAg" class="youtube"> <i class="fa fa-youtube"></i></a></li>
+			  <li><a href="https://plus.google.com/u/1/communities/107243348081719313381" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+			  <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+			  <li><a href="#" class="instagram"> <i class="fa fa-instagram"></i></a></li>
+			  <li class="address"><a href="#"><i class="fa fa-phone"></i>&nbsp;&nbsp;+91 (79) 27541093</a></li>
+			  <li class="address"><a href="#"><i class="fa fa-envelope-o"></i>&nbsp;&nbsp;manavmitradailynews@gmail.com</a></li>
+			</ul>
+			<!-- End .left-top-menu -->
+			<!-- Begin .right-top-menu -->
+			<ul class="right-top-menu pull-right">
+			  <li><a href ="/">Gujarati</a></li>
+			  <li><a href ="/hindi/">Hindi</a></li>
+			  <li class="contact"><a href="/hindi/aboutus"><i class="fa fa-map-marker fa-i"></i></a></li>
+			  <li class="about"><a href="/hindi/aboutus"><i class="fa fa-user fa-i"></i></a> </li>
+			</ul>
+			<!-- End .right-top-menu -->
+		  </div>
+		  <!-- End .container -->
+		</div>
+		<!-- Begin .container -->
+		<div class="container">
+		  <!-- Begin .header-logo -->
+		  <div style="top:-15px" class="header-logo"> <a href="/hindi/"><img src="{% static 'manavmitra/img/logo.png' %}" alt="Site Logo" /></a>
+		  </div>
+		  <!-- End .header-logo -->
+		  <!-- Begin .header-add-place -->
+			<!--<div class="header-add-place">
+        	<div class="desktop-add"><a href="#" target="_blank"><img src="{% static 'manavmitra/img/ad_728x90.jpg' %}" alt=""></a></div>
+      		</div>-->
+		  <!-- End .header-add-place -->
+		  <!--========== BEGIN .NAVBAR #MOBILE-NAV ==========-->
+		  <nav class="navbar navbar-default" id="mobile-nav">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" id="sidenav-toggle"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			  <div class="sidenav-header-logo"><a href="/hindi/"><img style="width: 250px;
+    height: 68px;" src="{% static 'manavmitra/img/logo.png' %}" alt="Site Logo" />
+				</a></div>
+			</div>
+			<div class="sidenav" data-sidenav data-sidenav-toggle="#sidenav-toggle">
+			  <button type="button" class="navbar-toggle active" data-toggle="collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			  <div class="sidenav-brand">
+				<div class="sidenav-header-logo"><a href="/hindi/"><img style="width: 250px;
+    height: 68px;" src="{% static 'manavmitra/img/logo.png' %}" alt="Site Logo" />
+                    <br><br><br><br><br>
+				  </a></div>
+			  </div>
+			  <ul class="sidenav-menu">
+				<li><a href="/hindi/">Home</a></li>
+				  {% for category in categories %}
+						<li><a href="/hindi/category/{{ category.slug }}">{{ category.name }}</a></li>
+				  {% endfor %}
+				  <li><a href="/hindi/epaper/">E-Paper</a></li>
+				  <li><a href="/hindi/aboutus/">About-us</a></li>
+              </ul>
+			</div>
+		  </nav>
+		  <!--========== END .NAVBAR #MOBILE-NAV ==========-->
+		</div>
+		<!-- End .container -->
+		<!--========== BEGIN .NAVBAR #FIXED-NAVBAR ==========-->
+		<div class="navbar" id="fixed-navbar">
+		  <!--========== BEGIN MAIN-MENU .NAVBAR-COLLAPSE COLLAPSE #FIXED-NAVBAR-TOOGLE ==========-->
+		  <div class="main-menu nav navbar-collapse collapse" id="fixed-navbar-toggle">
+			<!--========== BEGIN .CONTAINER ==========-->
+			<div class="container">
+			  <!-- Begin .nav navbar-nav -->
+			  <ul class="nav navbar-nav">
+				  <li style="font-weight:bold;font-size:24px;"><a style="font-size:12px;" href="/hindi/">Home</a></li>
+				  {% for category in categories %}
+						<li style="font-weight:bold;font-size:24px;"><a style="font-size:12px;" href="/hindi/category/{{ category.slug }}/">{{ category.name }}</a></li>
+				  {% endfor %}
+				<li style="font-weight:bold;font-size:24px;"><a style="font-size:12px;" href="/hindi/epaper/">E-Paper</a></li>
+				<!--========== BEGIN DROPDOWN MEGA-DROPDOWN ==========-->
+				<li style="font-weight:bold;font-size:24px;" class="dropdown mega-dropdown"> <a style="font-size:12px;" href="/hindi/aboutus/" >About Us &#9660;</a>
+				  <ul class="dropdown-menu mega-dropdown-menu">
+					<!-- Begin col-sm-4-->
+					<!-- Begin col-sm-4-->
+					<!-- End col-sm-4 -->
+					<!-- Begin col-sm-4 -->
+					<li class="col-sm-4">
+					  <h3 class="title">Latest News</h3>
+					  <ul class="media-list">
+						  {% for news in latest_news %}
+						<li class="media"> <a class="pull-right" href="/hindi/post/{{ news.slug }}"><img class="img-responsive" alt="" src="{{ news.image_upload.url }}"></a>
+						  <div class="media-body">
+							<p> <a href="/hindi/post/{{ news.slug }}" target="_blank"><span class="bg-1">{{ news.category }}</span></a><a href="/hindi/post/{{ news.slug }}">{{ news.caption }}</a></p>
+						  </div>
+						</li>
+						  {% endfor %}
+					  </ul>
+					</li>
+				<!-- End col-sm-4 -->
+					<!-- Begin col-sm-4 -->
+					  <h3 class="title">About Us</h3>
+					<!-- End col-sm-4 -->
+					<!-- Begin col-sm-8 -->
+					<li class="col-sm-8">
+						<p><a href="#" target="_blank"><br><strong><b style="font-size:25px;">Manavmitra Daily News</b></strong><br> <br> Address: <br> 1st Floor, khodiyar furniture building near shivshakti market, bapunagar charrasta bapunagar , ahmedabad. <br><br> Editor : Pranavkumar Patel <br> Jr. Editor : Gitaben Patel <br> M. Editor : Harikesh Patel <br><br> Mail-Address: <br> 505,506,507 Akhbarbhavan sector-11 , Gandhinagar , Gujarat. <br><br><br><br><br><br></a></p>
+					</li>
+					<!-- End col-sm-8 -->
+					<!-- Begin col-sm-4 -->
+					<li class="col-sm-4">
+					  <h3 class="title">Follow Us</h3>
+					  <div class="menu-social-icons">
+						<ul>
+						  <li> <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> </li>
+						  <li> <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> </li>
+						  <li> <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> </li>
+						  <li> <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a> </li>
+						  <li> <a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a> </li>
+						  <li> <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a> </li>
+						  <li> <a href="#" class="rss"><i class="fa fa-rss"></i></a> </li>
+						  <li> <a href="#" class="tumblr"><i class="fa fa-tumblr"></i></a> </li>
+						</ul>
+					  </div>
+					</li>
+					<!-- End col-sm-4 -->
+				  </ul>
+				</li>
+				<!--========== END DROPDOWN MEGA-DROPDOWN ==========-->
+			  </ul>
+			  <!--========== END .NAV NAVBAR-NAV ==========-->
+			</div>
+			<!--========== END .CONTAINER ==========-->
+		  </div>
+		  <!--========== END MAIN-MENU .NAVBAR-COLLAPSE COLLAPSE #FIXED-NAVBAR-TOOGLE ==========-->
+		  <!--========== BEGIN .SECOND-MENU NAVBAR #NAV-BELOW-MAIN ==========-->
+		  <div class="second-menu navbar" id="nav-below-main">
+			<!-- Begin .container -->
+			<div class="container">
+			  <!-- Begin .collapse navbar-collapse -->
+			  <!-- End .collapse navbar-collapse -->
+			  <!-- Begin .clock -->
+			  <div class="clock">
+				<div id="time"></div>
+				<div id="date"></div>
+			  </div>
+			  <!-- End .clock -->
+			</div>
+			<!-- End .container -->
+		  </div>
+		  <!--========== END .SECOND-MENU NAVBAR #NAV-BELOW-MAIN ==========-->
+		</div>
+	  </header>
+	  <!--========== END #HEADER ==========-->
+	  <!--========== BEGIN #MAIN-SECTION ==========-->
+        {% block main %}
+
+        {% endblock %}
+		<!--========== END #MAIN-SECTION ==========-->
+		<!--========== BEGIN #FOOTER==========-->
+		<!--========== END #FOOTER==========-->
+		<!--========== BEGIN #COPYRIGHTS==========-->
+		<div id="copyrights">
+		  <!-- Begin .container -->
+		  <div class="container">
+			<!-- Begin .copyright -->
+			<center><div class="copyright">&copy; Manavmitra 2017</div></center>
+			<!-- End .copyright -->
+		  </div>
+		  <!-- End .container -->
+		</div>
+		<!--========== END #COPYRIGHTS==========-->
+	</div>
+	  <!--========== END #WRAPPER ==========-->
+
+	  <!-- External JavaScripts -->
+	<script src="{% static 'manavmitra/js/jquery-3.1.1.min.js' %}"></script>
+	<script src="{% static 'manavmitra/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'manavmitra/js/jquery-ui.min.js' %}"></script>
+	<script src="{% static 'manavmitra/js/plugins.js' %}"></script>
+	<script src="{% static 'manavmitra/js/functions.js' %}"></script>
+	</body>
+	</html>
