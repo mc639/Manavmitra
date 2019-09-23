@@ -37,8 +37,7 @@ Rest from here : https://www.digitalocean.com/community/tutorials/how-to-serve-d
 
 server {
     listen 80;
-    server_name <domain> <ip>;
-
+    server_name ;
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         root /home/wizzy/manavmitra_website/manavmitra;
