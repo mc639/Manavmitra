@@ -42,7 +42,6 @@ server {
     location /static/ {
         root /home/wizzy/manavmitra_website/manavmitra;
     }
-
     location / {
         include         uwsgi_params;
         uwsgi_pass      unix:/run/uwsgi/manavmitra_website.sock;
